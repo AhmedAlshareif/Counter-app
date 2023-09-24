@@ -1,59 +1,70 @@
-.container{
+body {
+    background-color: rgba(11, 150, 83, 0.273);
+}
+
+.container {
     background-color: blue;
     width: 30%;
     background-color: rgba(10, 214, 112, 0.402);
     color: rgb(7, 48, 125);
-    margin:  0 auto;
-    padding: 10px ;
+    margin: 0 auto;
+    padding: 10px;
     border-radius: 5px;
     font-size: 60px;
     margin-bottom: 30px;
     margin-top: 50px;
 
 }
-.container h3{
+
+.container h3 {
     margin: 0;
 }
-.Counter{
+
+.Counter {
     display: flex;
     justify-content: space-around;
     padding: "10px";
-     margin: "10px"
+    margin: "10px"
 }
-.Counter button{
+
+.Counter button {
     padding: 10px;
     font-size: 60px;
     background-color: rgba(232, 235, 47, 0.672);
     border: none;
     border-radius: 55px;
 }
-.card{
-    width: 30% ;
+
+.card {
+    width: 30%;
     margin: 0 auto;
     padding: 0 10px;
-    background-color:  #129cb567;
+    background-color: #129cb567;
     border-radius: 5px;
     margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 10%;
 }
-.card button{
-    font-size: 50px;  
-    min-width: 80px;      
+
+.card button {
+    font-size: 50px;
+    min-width: 80px;
     padding: 10px;
     margin: 0 20px;
     background-color: rgba(48, 38, 160, 0.798);
     color: aliceblue;
     border: none;
-    border-radius:  5px;
+    border-radius: 5px;
     text-align: center
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
     scale: 1.1;
 }
-.total{
+
+.total {
     font-size: 30px;
     background-color: blueviolet;
     color: blanchedalmond;
