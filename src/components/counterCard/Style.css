@@ -1,0 +1,35 @@
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  background-color: blue;
+  width: 30%;
+  background-color: rgba(10, 214, 112, 0.402);
+  color: rgb(7, 48, 125);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 60px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.container h3 {
+  margin: 0;
+}
+
+.Counter {
+  display: flex;
+  justify-content: space-around;
+  padding: "10px";
+  margin: "10px";
+}
+
+.Counter button {
+  padding: 10px;
+  font-size: 60px;
+  background-color: rgba(232, 235, 47, 0.672);
+  border: none;
+  border-radius: 55px;
+}

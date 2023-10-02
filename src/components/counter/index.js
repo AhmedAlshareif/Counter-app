@@ -1,49 +1,40 @@
 import { useState } from "react";
 import "./style.css"
-const Counter = ({ value, onIncrease, onDecrease, onDelete, onReset }) => {
-    return (
+import { CounterCard } from "../counterCard/CounterCard";
 
-        <div className="container">
-            <h3> {value}</h3>
-            <div className="Counter">
-                <button onClick={onIncrease}>➕</button>
-                <button onClick={onDecrease} disabled={value === 0}>➖</button>
-                <button onClick={onDelete}>❌</button>
-                <button onClick={onReset}>♻️</button>
-            </div>
-        </div>
-    );
-};
-
-function Compo() {
+function Counter() {
     const [counters, setCounters] = useState([{ id: 1, value: 0 }]);
-
-    const handleIncrease = (id) => {
+ 
+    const handleIncrease = (counterId) => {
         setCounters((prevCounters) =>
             prevCounters.map((counter) =>
-                counter.id === id ? { ...counter, value: counter.value + 1 } : counter
+                counter.id === counterId ? { ...counter, value: counter.value + 1 } : counter
+            )
+        );
+        // setCounters(3);
+        // setCounters((prev) => {
+        //     return `${prev.value}`
+        // });
+    };
+
+    const handleDecrease = (counterId) => {
+        setCounters(prevCounters =>
+            prevCounters.map(prevCounter =>
+                prevCounter.id === counterId ? { ...prevCounter, value: prevCounter.value - 1 } : prevCounter
             )
         );
     };
 
-    const handleDecrease = (id) => {
+    const handleDelete = (counterId) => {
         setCounters((prevCounters) =>
-            prevCounters.map((counter) =>
-                counter.id === id ? { ...counter, value: counter.value - 1 } : counter
-            )
+            prevCounters.filter(({ id, ...restProps }) => id !== counterId)
         );
     };
 
-    const handleDelete = (id) => {
-        setCounters((prevCounters) =>
-            prevCounters.filter((counter) => counter.id !== id)
-        );
-    };
-
-    const handleReset = (id) => {
+    const handleReset = (counterId) => {
         setCounters((prevCounters) =>
             prevCounters.map((counter) =>
-                counter.id === id ? { ...counter, value: 0 } : counter
+                counter.id === counterId ? { ...counter, value: 0 } : counter
             )
         );
     };
@@ -78,7 +69,7 @@ function Compo() {
                 <h3>Total: {calculateTotal()}</h3>
             </div>
             {counters.map((counter) => (
-                <Counter
+                <CounterCard 
                     key={counter.id}
                     value={counter.value}
                     onIncrease={() => handleIncrease(counter.id)}
@@ -87,11 +78,12 @@ function Compo() {
                     onReset={() => handleReset(counter.id)}
                 />
             ))}
-          
+
         </div>
-    
+
 
     );
 }
+export default Counter;
 
-export default Compo;
+
